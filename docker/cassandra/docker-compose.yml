@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  cassandra:
+    container_name: cassandra-standalone-compose
+    build: .
+    ports: [ "9042:9042" ]
+#    volumes:
+#      - $HOME/docker/volumes/cassandra:/var/lib/cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: demo-cluster
+      CASSANDRA_DC: local-dc
+

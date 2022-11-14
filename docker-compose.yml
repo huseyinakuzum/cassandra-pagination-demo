@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  cassandra:
+    image: cassandra
+    container_name: cassandra-compose
+    build:
+      context: docker/cassandra
+    ports: ["9042:9042"]
+#    volumes:
+#      - $HOME/docker/volumes/cassandra:/var/lib/cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: demo-cluster
+      CASSANDRA_DC: local-dc
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch

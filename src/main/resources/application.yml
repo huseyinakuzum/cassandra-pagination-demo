@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: Cassandra Pagination Demo
+  jackson:
+    default-property-inclusion: non_empty
+    serialization:
+      write-dates-as-timestamps: true
+  data:
+    cassandra:
+      create-keyspace: false
+      keyspace-name: demo
+      port: 9042
+      username: cassandra
+      password: cassandra
+      schema-action: create_if_not_exists
+      local-datacenter: local-dc
+
+springdoc:
+  swagger-ui:
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    use-root-path: true
+  show-actuator: false
